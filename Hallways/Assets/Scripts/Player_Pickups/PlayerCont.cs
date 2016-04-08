@@ -701,7 +701,7 @@ public class PlayerCont : MonoBehaviour
 							r = carriedObject.GetComponent<Rigidbody>();
 							r.useGravity = false;
 							disappearTime = 1.0f;
-							Debug.Log("Flashlight collected. Press 'F' to turn it on... Something seems to be wrong with the wiring though?");
+							Debug.Log("Flashlight collected. Press 'F' to turn it on and off.");
 							StartCoroutine(WaitForSeconds(disappearTime, carriedObject));
 						}
 					}
