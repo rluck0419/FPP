@@ -295,22 +295,24 @@ public class PlayerCont : MonoBehaviour
 
 				if(d != null && d.open==false) {
 					drawer = d.gameObject;
+                    StartCoroutine("OpenObj", d.transform);
 					// drawer.transform.position = Vector3.Lerp (
 					// 	drawer.transform.position,
 					// 	drawer.transform.position - (drawer.transform.forward * 5),
 					// 	Time.deltaTime * 5
 					// );
-					drawer.transform.position = drawer.transform.position - (drawer.transform.forward * 0.45f);
+					//drawer.transform.position = drawer.transform.position - (drawer.transform.forward * 0.45f);
 					d.open = true;
 				}
 				else if (d != null && d.open==true) {
 					drawer = d.gameObject;
-					// drawer.transform.position = Vector3.Lerp (
-					// 	drawer.transform.position,
-					// 	drawer.transform.position + (drawer.transform.forward * 5),
-					// 	Time.deltaTime * 5
-					// );
-					drawer.transform.position = drawer.transform.position + (drawer.transform.forward * 0.45f);
+                    StartCoroutine("CloseObj", d.transform);
+                    // drawer.transform.position = Vector3.Lerp (
+                    // 	drawer.transform.position,
+                    // 	drawer.transform.position + (drawer.transform.forward * 5),
+                    // 	Time.deltaTime * 5
+                    // );
+                    //drawer.transform.position = drawer.transform.position + (drawer.transform.forward * 0.45f);
 					d.open = false;
 				}
 
@@ -344,7 +346,35 @@ public class PlayerCont : MonoBehaviour
 		}
 	}
 
-	public void PlayGuitar () {
+    private IEnumerator OpenObj(Transform Obj, float time)
+    {
+        float ctime = 0f;
+        while (ctime < time) {
+            Obj.position = Vector3.Lerp(
+                             Obj.position,
+                             Obj.position - (Obj.forward * 5),
+                         	Time.deltaTime * 5);
+            ctime += Time.deltaTime;
+            yield return null; //Lets go fo thread to run other things
+        }
+        yield break;
+    }
+
+    private IEnumerator CloseObj(Transform Obj, float time)
+    {
+        float ctime = 0f;
+        while (ctime < time) {
+            Obj.position = Vector3.Lerp(
+                             Obj.position,
+                             Obj.position + (Obj.forward * 5),
+                         	Time.deltaTime * 5);
+            ctime += Time.deltaTime;
+            yield return null;
+        }
+        yield break;
+    }
+
+    public void PlayGuitar () {
 		audio = guitar.GetComponent<AudioSource>();
 		if(Input.GetKeyDown(KeyCode.Alpha1)||Input.GetKeyDown(KeyCode.Keypad1)) {
 			int x = Screen.width / 2;
