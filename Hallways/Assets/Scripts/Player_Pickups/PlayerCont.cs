@@ -98,6 +98,7 @@ public class PlayerCont : MonoBehaviour
 	private float mouseY = 0.0f;
 	public float disappearTime = 1.0f;
 	public float distance = 1.0f;
+	public float bigDistance = 2.0f;
 	public float smooth = 7.0f;
 	public float thrust = 512.0f;
 	public float rotation = 2.0f;
@@ -731,7 +732,7 @@ public class PlayerCont : MonoBehaviour
 							r = carriedObject.GetComponent<Rigidbody>();
 							r.useGravity = false;
 							disappearTime = 1.0f;
-							Debug.Log("Flashlight collected. Press 'F' to turn it on... Something seems to be wrong with the wiring though?");
+							Debug.Log("Flashlight collected. Press 'F' to turn it on and off.");
 							StartCoroutine(WaitForSeconds(disappearTime, carriedObject));
 						}
 					}
@@ -743,6 +744,11 @@ public class PlayerCont : MonoBehaviour
 	// Check & continue carrying object after pickup
 	public void Carry (GameObject o) {
 		if (carrying==true && carriedObject!=null) {
+			if (carriedObject.GetComponent<bigPickup>() !=null) {
+				distance = bigDistance;
+			} else {
+				distance = 0.75f;
+			}
 			o.transform.position = Vector3.Lerp (
 				o.transform.position,
 				mainCamera.transform.position + (mainCamera.transform.forward * distance),

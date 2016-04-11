@@ -158,7 +158,7 @@
      <None Include="Assets\JMO Assets\MatCap Shaders\_MatCap Shaders Readme.txt" />
      <None Include="Assets\Models\L_FG_Assets_Pack_Lite\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="Assembly-UnityScript">
- <HintPath>/Users/rob/Documents/Hallways/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ <HintPath>/Users/rob/Documents/School/FirstPersonPuzzler/Hallways/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -185,10 +185,10 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
  </Reference>
  <Reference Include="JMOAssets">
- <HintPath>/Users/rob/Documents/Hallways/Assets/JMO Assets/Editor/JMOAssets.dll</HintPath>
+ <HintPath>/Users/rob/Documents/School/FirstPersonPuzzler/Hallways/Assets/JMO Assets/Editor/JMOAssets.dll</HintPath>
  </Reference>
  <Reference Include="JMOAssets_MatCapWelcome">
- <HintPath>/Users/rob/Documents/Hallways/Assets/JMO Assets/Editor/JMOAssets_MatCapWelcome.dll</HintPath>
+ <HintPath>/Users/rob/Documents/School/FirstPersonPuzzler/Hallways/Assets/JMO Assets/Editor/JMOAssets_MatCapWelcome.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll</HintPath>

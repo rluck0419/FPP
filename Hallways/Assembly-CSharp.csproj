@@ -112,6 +112,7 @@
      <Compile Include="Assets\Scripts\Player_Pickups\PlayerController.cs" />
      <Compile Include="Assets\Scripts\spinningFan.cs" />
      <Compile Include="Assets\Spikeable.cs" />
+     <Compile Include="Assets\bigPickup.cs" />
      <Compile Include="Assets\hutchDoor.cs" />
      <Compile Include="Assets\ticker.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
