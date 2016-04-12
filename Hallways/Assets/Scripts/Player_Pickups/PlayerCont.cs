@@ -347,28 +347,30 @@ public class PlayerCont : MonoBehaviour
 		}
 	}
 
-    private IEnumerator OpenObj(Transform Obj, float time)
+    private IEnumerator OpenObj(Transform Obj)
     {
+        float time = 0.5f;
         float ctime = 0f;
         while (ctime < time) {
             Obj.position = Vector3.Lerp(
                              Obj.position,
-                             Obj.position - (Obj.forward * 5),
-                         	Time.deltaTime * 5);
+                             Obj.position - (Obj.forward * 0.25f),
+                         	Time.deltaTime * 2);
             ctime += Time.deltaTime;
             yield return null; //Lets go fo thread to run other things
         }
         yield break;
     }
 
-    private IEnumerator CloseObj(Transform Obj, float time)
+    private IEnumerator CloseObj(Transform Obj)
     {
+        float time = 0.5f;
         float ctime = 0f;
         while (ctime < time) {
             Obj.position = Vector3.Lerp(
                              Obj.position,
-                             Obj.position + (Obj.forward * 5),
-                         	Time.deltaTime * 5);
+                             Obj.position + (Obj.forward * 0.25f),
+                         	Time.deltaTime * 2);
             ctime += Time.deltaTime;
             yield return null;
         }
